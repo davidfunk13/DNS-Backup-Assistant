@@ -8,10 +8,12 @@ const askForUrl = new Question('input', 'requestUrl', 'Please enter url for DNS 
 
 console.log('Welcome to my DNS Backup assistant');
 
-const startPrompt = inquirer.prompt([askForUrl]);
-
-startPrompt.then(answer => {
-    const { requestUrl } = answer;
-    
-    makeRequests(requestUrl);
-});
+inquirer.prompt([askForUrl])
+    .then(answer => {
+        const { requestUrl } = answer;
+        makeRequests(requestUrl).then(data => {
+            //write this data to file;
+            console.log(data);
+        });
+        
+    });
