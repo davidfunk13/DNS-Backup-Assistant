@@ -1,0 +1,27 @@
+{
+  "name": "dns-backup-assistant",
+  "version": "1.0.0",
+  "description": "Backup tool for DNS configs.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "inquirer": "^7.1.0",
+    "jsdom": "^16.2.2",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidfunk13/DNS-Backup-Assistant.git"
+  },
+  "author": "Dave Funk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidfunk13/DNS-Backup-Assistant/issues"
+  },
+  "homepage": "https://github.com/davidfunk13/DNS-Backup-Assistant#readme"
+}
