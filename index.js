@@ -1,22 +1,17 @@
 const inquirer = require('inquirer');
 
-const { PROMPT_1 } = require('./utils/questions');
+const Question = require('./utils/questions');
 
-const { WHOIS_API_BASE } = require('./utils/apiBaseUrls');
+const makeRequests = require('./utils/makeRequest');
 
-inquirer.prompt([
-PROMPT_1
-]).then(answers => console.log(answers));
-// const express = require('express');
+const askForUrl = new Question('input', 'requestUrl', 'Please enter url for DNS record retreival:');
 
-// const app = express();
+console.log('Welcome to my DNS Backup assistant');
 
-// const PORT = 3001;
+const startPrompt = inquirer.prompt([askForUrl]);
 
-// app.listen(PORT, (err) => {
-
-//     if (err) {
-//         return console.log(err);
-//     }
-//     console.log(`App listening on port ${PORT}`)
-// })
+startPrompt.then(answer => {
+    const { requestUrl } = answer;
+    
+    makeRequests(requestUrl);
+});
