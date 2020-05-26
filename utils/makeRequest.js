@@ -4,7 +4,7 @@ const { parseViewDNS, parseSecurityTrails, parseMxToolbox, parseWhoIs } = requir
 
 const { WHOIS_API_BASE, VIEWDNS_API_BASE, MX_TOOLBOX_API_BASE, SECURITY_TRAILS_API_BASE } = require('./apiBaseUrls');
 
-function makeRequests (url) {
+function makeRequests(url) {
 
     if (!url) {
         return console.log('no url passed');
