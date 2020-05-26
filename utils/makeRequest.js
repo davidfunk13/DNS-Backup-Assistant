@@ -17,11 +17,16 @@ function makeRequests(url) {
         axios.get(SECURITY_TRAILS_API_BASE + url)
     ])
         .then(axios.spread((whoIs, viewDNS, mxToolbox, securityTrails) => {
+            console.log(SECURITY_TRAILS_API_BASE + url)
             const whoIsBackup = parseWhoIs(whoIs.data);
             const viewDNSBackup = parseViewDNS(viewDNS.data);
             // parseMxToolbox(mxToolbox.data);
-            // parseSecurityTrails(securityTrails.data);
-            return { whoIsBackup, viewDNSBackup };
+            // const securityTrailsBackup = parseSecurityTrails(securityTrails.data);
+            return {
+                whoIsBackup,
+                viewDNSBackup,
+                // securityTrailsBackup
+            };
         }));
 }
 
