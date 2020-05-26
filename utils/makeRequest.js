@@ -18,10 +18,10 @@ function makeRequests(url) {
     ])
         .then(axios.spread((whoIs, viewDNS, mxToolbox, securityTrails) => {
             const whoIsBackup = parseWhoIs(whoIs.data);
-            // parseViewDNS(viewDNS.data);
+            const viewDNSBackup = parseViewDNS(viewDNS.data);
             // parseMxToolbox(mxToolbox.data);
             // parseSecurityTrails(securityTrails.data);
-            return { whoIsBackup };
+            return { whoIsBackup, viewDNSBackup };
         }));
 }
 

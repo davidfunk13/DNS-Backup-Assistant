@@ -13,8 +13,9 @@ console.log('Welcome to my DNS Backup assistant');
 inquirer.prompt([askForUrl])
     .then(answer => {
         const { requestUrl } = answer;
+
         makeRequests(requestUrl).then(data => {
             writeTextFile(requestUrl, data);
         });
-        
+
     });
