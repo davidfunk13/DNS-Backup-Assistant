@@ -14,7 +14,9 @@ inquirer.prompt([askForUrl])
     .then(answer => {
         const { requestUrl } = answer;
 
+        console.log('fuckshit')
         makeRequests(requestUrl).then(data => {
+
             writeTextFile(requestUrl, data);
         });
 
