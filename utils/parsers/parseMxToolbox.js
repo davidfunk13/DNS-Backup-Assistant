@@ -1,6 +1,6 @@
 function parseMxToolbox (input) {
-    console.log(input);
-    return console.log('parse mx toolbox');
+
+    return 'mxRecords parsed html will be here.';
 }
 
 module.exports = parseMxToolbox;

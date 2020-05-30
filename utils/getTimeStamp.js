@@ -17,7 +17,6 @@ function getTimeStamp() {
 
     militaryTime = militaryTime.split(':');
 
-
     if (hours > 0 && hours <= 12) {
         timeStamp = "" + hours;
     } else if (hours > 12) {
